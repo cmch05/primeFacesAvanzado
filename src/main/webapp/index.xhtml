@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        
+        <h:form>
+            <p:inputText value="#{categoriaController.categoria.nombre}"/>
+            <p:commandButton value="Registar" actionListener="#{categoriaController.registrar()}" />
+        </h:form>
+        
+        <!-- si solo se va a hacer navegacion es recomendable usar un link simple evita peticiones al server -->
+        <p:link outcome="usuario" value="Crear cuenta"/>
+        
+        <!-- si se necesita hacer logica tras la operacion se husa commanLink -->
+        <!-- el action  o actionListener  nos da la regla de navegacion -->
+        <p:commandLink value="Crear cuenta" action="usuario" />
+    </h:body>
+</html>
+

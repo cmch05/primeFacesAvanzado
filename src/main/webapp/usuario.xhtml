@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </h:head>
+    <h:body>
+
+        <h:form >
+            <!-- fieldset permite tener separacion de datos -->
+            <p:fieldset legend="Datos personales">
+                <!-- con el panelGrid agrupamos en columnas  tambien se puede colocoar <h:column> -->
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombres" />
+                    <p:inputText />
+
+                    <p:outputLabel value="Apellidos" />
+                    <p:inputText />
+
+                    <p:outputLabel value="Sexo" />
+                    <p:selectOneRadio >
+                        <f:selectItem itemValue="M" itemLabel="MASCULINO" />
+                        <f:selectItem itemValue="F" itemLabel="FEMENINO" />
+                    </p:selectOneRadio>
+
+                    <p:outputLabel value="Fecha nacimiento" />
+                    <p:calendar locale="es"/> <!-- indicamos el idioma -->
+                </p:panelGrid>
+            </p:fieldset>
+
+            <p:fieldset legend="Datos de la cuenta">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Usuario" />
+                    <p:inputText />
+
+                    <p:outputLabel value="Clave" />
+                    <p:password />
+
+                    <p:outputLabel value="Repetir clave" />
+                    <p:password />
+                </p:panelGrid>
+                
+                <!-- iconos por defecto de primefaces -->
+                <p:commandButton value="Registrar" icon="ui-icon-check" />
+                
+            </p:fieldset>
+            
+        </h:form>
+        
+        <p:link  outcome="index" value="Inicio" />
+        
+        <!-- la carpeta library es la carpeta resources  -->
+        <h:outputScript library="js" name="spanishLocale.js" />
+       
+    </h:body>
+</html>
